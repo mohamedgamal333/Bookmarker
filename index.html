@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- css connect  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="interface py-5  position-relative ">
+
+
+        <div class="bookmark  d-flex justify-content-center align-items-center flex-column ">
+            <h1>Bookmarker</h1>
+            
+            <div class="bookmarkBoody w-100 p-3 py-4 mt-5  d-flex  flex-column justify-content-center align-items-center">
+                <h2><i class="fa-solid fa-bookmark px-1"></i>Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+                <div class="mb-3 w-100">
+                    <label for="siteName" class="form-label fw-semibold "><i class="fa-solid fa-book-bookmark px-1 "></i>Site Name</label>
+                   
+                    <input type="text" oninput="validationName()" class="form-control  form-control-sm" id="siteName" placeholder="Bookmark Name">
+                 
+                </div>
+                <div class="mb-3 w-100">
+                    <label for="siteUrl" class="form-label  fw-semibold "><i class="fa-solid fa-link px-1"></i>Site URL</label>
+                    <input type="url" oninput="validationUrl()" class="form-control form-control-sm" id="siteUrl" placeholder="Website URL">
+                  </div>
+                  <button class="btn btn-submit px-5 py-2" onclick="addBookmark()">Submit</button>
+            </div>
+            <table class="table mt-4 ">
+                <thead class="text-center ">
+                    <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">website name</th>
+                        <th class="text-capitalize">visit</th>
+                        <th class="text-capitalize">delete</th>
+                       
+                    </tr>
+                    
+                </thead >
+                <tbody id="cartonaData" class="text-center ">
+                   
+                </tbody >
+                
+            </table>
+<div id="box-info" class="box-info  position-absolute start-0 top-0    d-flex justify-content-center align-items-center flex-column" >
+
+    <div id="alert-box" class="alert-box box-conent d-none bg-white p-4 rounded-2 shadow-lg  d-flex justify-content-center align-items-center flex-column ">
+        <div class="alert-header box-header w-100 d-flex justify-content-between align-items-center mb-4">
+           
+            <div class="circles d-flex ">
+                <span class="top-circle red rounded-circle me-2  "></span>
+                <span class="top-circle yellow rounded-circle me-2 "></span>
+                <span class="top-circle green rounded-circle me-2 "></span>
+            </div>
+            <button class="close-btn border-0" id="closeBtn" onclick="closeAlert()"><i class="fa-solid fa-xmark fs-3"></i></button>
+            
+          </div>
+         <p class="m-0 pb-2 fw-bold">
+            Site Name or Url is not valid, Please follow the rules below :
+          </p>
+
+          <ol class="alert-body list-unstyled ps-0">
+            <li class="pt-3"> <i class="fa-regular fa-circle-right text-danger  pe-2"></i>Site name must contain at least 3 characters</li>
+            <li class="pt-3"><i class="fa-regular fa-circle-right text-danger pe-2"></i> Site URL must be a valid one</li>
+          </ol>
+
+    </div>
+</div>
+           
+        </div>
+
+
+    </main>
+
+<!-- connect sweet alert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- js connect -->
+ <script src="js/index.js"></script>
+<!-- bootstrap connect -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
